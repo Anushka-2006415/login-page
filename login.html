@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>Login Page</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+       <label>Username</label>
+       <input type="text" id="Username">
+        <br><br>
+        <label>Password</label>
+        <input type="Password" id="Password">
+       <br><br>
+       <button id="Loginbtn">Login</button>
+       <p id="message"></p>
+        <script>
+            let Username=document.getElementById("Username");
+            let Password=document.getElementById("Password");
+            let Loginbtn=document.getElementById("Loginbtn");
+            let message=document.getElementById("message");
+        
+            Loginbtn.addEventListener("click",function()
+            {
+                let User=Username.value;
+                let Pass=Password.value;
+                if(User=="hassu"&& Pass=="2006"){
+                    localStorage.setItem("Username",User);
+                    localStorage.setItem("Password",Pass);
+                    message.innerHTML="Login sucessful";
+                }
+                else{
+                    message.innerHTML="Login unsucessful";
+                }
+
+               
+            });
+        </script>
+    </body>
+</html>
